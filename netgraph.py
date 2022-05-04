@@ -220,7 +220,7 @@ def define_pos(start, papa4son, son4papa, len_factor=1, family_factor=1):
             # define vertical position for each child
             for son in papa4son[event]:
                 
-                pos_y[son] += ((pos_y[event] + val) - pos_y[son]) * (pos_x[son] - pos_x[event])**len_factor * (1 / len(son4papa[son]))**family_factor
+                pos_y[son] += ((pos_y[event] + val) - pos_y[son]) * (float(pos_x[son] - pos_x[event]))**len_factor * (1 / len(son4papa[son]))**family_factor
                 val -= 1
 
     pos = {i: [pos_x[i], pos_y[i]] for i in pos_x}
